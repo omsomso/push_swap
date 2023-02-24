@@ -6,18 +6,18 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:08:46 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 02:28:54 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_median(node_t **stack)
+int	find_median(t_node **stack)
 {
 	int		val;
 	int		*v;
 	int		n;
-	node_t	*current;
+	t_node	*current;
 
 	n = 1;
 	val = 0;
@@ -34,7 +34,7 @@ int	find_median(node_t **stack)
 	return (val);
 }
 
-int	find_larger_idx(node_t **stack, int min)
+int	find_larger_idx(t_node **stack, int min)
 {
 	int	i;
 	int	j;
@@ -62,7 +62,7 @@ int	find_larger_idx(node_t **stack, int min)
 	return (-1);
 }
 
-int	find_smaller_idx(node_t **stack, int max)
+int	find_smaller_idx(t_node **stack, int max)
 {
 	int	i;
 	int	j;
@@ -90,12 +90,12 @@ int	find_smaller_idx(node_t **stack, int max)
 	return (-1);
 }
 
-int	find_largest_idx(node_t **a)
+int	find_largest_idx(t_node **a)
 {
 	int		i;
 	int		idx;
 	int		max;
-	node_t	*current;
+	t_node	*current;
 
 	if (*a == NULL)
 		return (-1);

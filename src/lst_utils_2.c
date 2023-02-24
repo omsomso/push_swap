@@ -6,16 +6,16 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:03:45 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 00:37:41 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	lst_count_el(node_t **stack)
+int	lst_count_el(t_node **stack)
 {
 	int		n;
-	node_t	*current;
+	t_node	*current;
 
 	n = 0;
 	current = *stack;
@@ -27,9 +27,9 @@ int	lst_count_el(node_t **stack)
 	return (n);
 }
 
-int	lst_check_sort(node_t **stack)
+int	lst_check_sort(t_node **stack)
 {
-	node_t	*current;
+	t_node	*current;
 	int		i;
 
 	current = *stack;
@@ -46,7 +46,7 @@ int	lst_check_sort(node_t **stack)
 	return (-1);
 }
 
-void	lst_swap(node_t *head)
+void	lst_swap(t_node *head)
 {
 	int	tmp_val;
 	int	tmp_split;
@@ -61,7 +61,7 @@ void	lst_swap(node_t *head)
 	head->next->split = tmp_split;
 }
 
-void	lst_rotate(node_t **stack)
+void	lst_rotate(t_node **stack)
 {
 	int	tmp_val;
 	int	tmp_split;
@@ -74,11 +74,11 @@ void	lst_rotate(node_t **stack)
 	lst_add_bottom(*stack, tmp_val, tmp_split);
 }
 
-void	lst_rev_rotate(node_t **stack)
+void	lst_rev_rotate(t_node **stack)
 {
 	int		tmp_val;
 	int		tmp_split;
-	node_t	*tmp;
+	t_node	*tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:19:05 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 00:32:35 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ int	arr_check_sort(int *val, int n)
 	return (1);
 }
 
-int	*lst_to_arr(node_t **stack, int n)
+int	*lst_to_arr(t_node **stack, int n)
 {
 	int		i;
 	int		*ret;
-	node_t	*current;
+	t_node	*current;
 
 	i = 0;
 	current = *stack;

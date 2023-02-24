@@ -6,17 +6,17 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:03:45 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 00:45:33 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lst_add_top(node_t **head, int val, int split)
+void	lst_add_top(t_node **head, int val, int split)
 {
-	node_t	*new;
+	t_node	*new;
 
-	new = malloc(sizeof(node_t));
+	new = malloc(sizeof(t_node));
 	if (new == NULL)
 		return ;
 	new->val = val;
@@ -25,24 +25,24 @@ void	lst_add_top(node_t **head, int val, int split)
 	*head = new;
 }
 
-void	lst_add_bottom(node_t *head, int val, int split)
+void	lst_add_bottom(t_node *head, int val, int split)
 {
-	node_t	*new_last;
+	t_node	*new_last;
 
 	new_last = head;
 	while (new_last->next != NULL)
 		new_last = new_last->next;
-	new_last->next = malloc(sizeof(node_t));
+	new_last->next = malloc(sizeof(t_node));
 	new_last = new_last->next;
 	new_last->val = val;
 	new_last->split = split;
 	new_last->next = NULL;
 }
 
-int	lst_del_first(node_t **head)
+int	lst_del_first(t_node **head)
 {
 	int		retval;
-	node_t	*next_node;
+	t_node	*next_node;
 
 	retval = (*head)->val;
 	next_node = (*head)->next;
@@ -51,10 +51,10 @@ int	lst_del_first(node_t **head)
 	return (retval);
 }
 
-int	lst_del_last(node_t *head)
+int	lst_del_last(t_node *head)
 {
 	int		ret_val;
-	node_t	*new_last;
+	t_node	*new_last;
 
 	new_last = head;
 	while (new_last->next->next != NULL)
@@ -65,9 +65,9 @@ int	lst_del_last(node_t *head)
 	return (ret_val);
 }
 
-void	lst_free(node_t **lst)
+void	lst_free(t_node **lst)
 {
-	node_t	*tmp;
+	t_node	*tmp;
 
 	while ((*lst) != NULL)
 	{

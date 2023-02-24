@@ -6,13 +6,13 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:18:14 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 03:33:29 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_three(node_t **a, int n)
+void	sort_three(t_node **a, int n)
 {
 	if (n <= 1)
 		return ;
@@ -30,7 +30,7 @@ void	sort_three(node_t **a, int n)
 		do_things(a, a, "sa");
 }
 
-void	sort_rev_three(node_t **b, int n)
+void	sort_rev_three(t_node **b, int n)
 {
 	if (n <= 1)
 		return ;
@@ -48,7 +48,7 @@ void	sort_rev_three(node_t **b, int n)
 		do_things(b, b, "sb");
 }
 
-void	sort_small(node_t **a, node_t **b, int n)
+void	sort_small(t_node **a, t_node **b, int n)
 {
 	if (n <= 3)
 	{
@@ -62,7 +62,7 @@ void	sort_small(node_t **a, node_t **b, int n)
 		do_things(a, b, "pa");
 }
 
-void	sort_med(node_t **a, node_t **b, int n)
+void	sort_med(t_node **a, t_node **b, int n)
 {
 	int	med;
 	int	i;
@@ -90,7 +90,7 @@ void	sort_med(node_t **a, node_t **b, int n)
 	}
 }
 
-void	sort_big(node_t **a, node_t **b)
+void	sort_big(t_node **a, t_node **b)
 {
 	while (lst_check_sort(a) == 0)
 		push_smaller(a, b, find_median(a));

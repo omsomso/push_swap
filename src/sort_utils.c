@@ -6,13 +6,13 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:29:54 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 03:41:27 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	rot_to_idx(node_t **stack, char *which, int idx)
+int	rot_to_idx(t_node **stack, char *which, int idx)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ int	rot_to_idx(node_t **stack, char *which, int idx)
 	return (i);
 }
 
-int	rot_to_idx_larger(node_t **stack, char *which, int idx)
+int	rot_to_idx_larger(t_node **stack, char *which, int idx)
 {
 	int	i;
 
@@ -51,11 +51,11 @@ int	rot_to_idx_larger(node_t **stack, char *which, int idx)
 	return (i);
 }
 
-void	push_larger(node_t **a, node_t **b, int min)
+void	push_larger(t_node **a, t_node **b, int min)
 {
 	int		largern;
 	int		largeridx;
-	node_t	*current;
+	t_node	*current;
 
 	largern = 0;
 	current = *b;
@@ -76,12 +76,12 @@ void	push_larger(node_t **a, node_t **b, int min)
 	(*a)->split = 1;
 }
 
-void	push_smaller(node_t **a, node_t **b, int max)
+void	push_smaller(t_node **a, t_node **b, int max)
 {
 	int		i;
 	int		smallern;
 	int		smalleridx;
-	node_t	*current;
+	t_node	*current;
 
 	i = 0;
 	smallern = 0;

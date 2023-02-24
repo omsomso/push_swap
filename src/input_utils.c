@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:00:58 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 17:25:34 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,25 +70,25 @@ int	input_int_check(int *val, int n)
 		while (j < n)
 		{
 			if (val[i] == val[j] && j != i)
-				return (0);
+				return (1);
 			j++;
 		}
 		i++;
 	}
 	if (arr_check_sort(val, n) == 1)
-		return (0);
-	return (1);
+		return (2);
+	return (0);
 }
 
-void	input_to_lst(node_t **stack, int *values, int n)
+void	input_to_lst(t_node **stack, int *values, int n)
 {
 	int		i;
-	node_t	*new_node;
+	t_node	*new_node;
 
 	i = n - 1;
 	while (i >= 0)
 	{
-		new_node = malloc(sizeof(node_t));
+		new_node = malloc(sizeof(t_node));
 		if (new_node == NULL)
 			return ;
 		new_node->val = values[i];

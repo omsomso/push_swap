@@ -6,13 +6,13 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:08:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:28:00 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	do_things(node_t **a, node_t **b, char *inst)
+void	do_things(t_node **a, t_node **b, char *inst)
 {
 	if (inst[0] == 'p')
 	{
@@ -28,7 +28,7 @@ void	do_things(node_t **a, node_t **b, char *inst)
 	ft_putendl_fd(inst, 1);
 }
 
-void	do_swap(node_t *a, node_t *b, char *inst)
+void	do_swap(t_node *a, t_node *b, char *inst)
 {
 	if (inst[1] == 'a')
 		lst_swap(a);
@@ -41,7 +41,7 @@ void	do_swap(node_t *a, node_t *b, char *inst)
 	}
 }
 
-void	do_rotate(node_t **a, node_t **b, char *inst)
+void	do_rotate(t_node **a, t_node **b, char *inst)
 {
 	if (inst[2] == '\0')
 	{
@@ -59,7 +59,7 @@ void	do_rotate(node_t **a, node_t **b, char *inst)
 		do_rotate_rev(a, b, inst);
 }
 
-void	do_rotate_rev(node_t **a, node_t **b, char *inst)
+void	do_rotate_rev(t_node **a, t_node **b, char *inst)
 {
 	if (inst[2] == 'a')
 		lst_rev_rotate(a);
@@ -72,7 +72,7 @@ void	do_rotate_rev(node_t **a, node_t **b, char *inst)
 	}
 }
 
-void	do_push(node_t **stack1, node_t **stack2)
+void	do_push(t_node **stack1, t_node **stack2)
 {
 	int	tmp_val;
 	int	tmp_split;
