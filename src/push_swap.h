@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:31:59 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:20:00 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:20:46 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ typedef struct node {
 	struct node	*next;
 }	t_node;
 
-int		input_read(t_node **a, char **s, int n);
+int		input_read(t_node **a, char **argv, int argc, char ***s);
+int		input_read_add(t_node **a, int n, int *val);
+void	free_ptrptr(char ***s);
 int		push_swap(int argc, char **argv);
 
+void	sort(t_node **a, t_node **b);
 void	sort_three(t_node **a, int n);
 void	sort_rev_three(t_node **b, int n);
 void	sort_small(t_node **a, t_node **b, int n);

@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:00:58 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/24 15:10:58 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	input_str_check(char **s, int n)
 	while (i < n)
 	{
 		j = 0;
+		if (ft_strlen(s[i]) > 14)
+			return (0);
 		while (s[i][j])
 		{
 			if (ft_isdigit(s[i][j]) == 0 && s[i][j] != '-')
