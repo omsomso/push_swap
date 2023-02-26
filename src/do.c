@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:08:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/26 15:13:42 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:55:14 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	do_things(t_node **a, t_node **b, char *inst)
 	if (inst[0] == 's')
 		do_swap(*a, *b, inst);
 	ft_putendl_fd(inst, 1);
-	stepcounter();
 }
 
 void	do_swap(t_node *a, t_node *b, char *inst)

@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:31:59 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/26 18:33:46 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:55:49 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,5 @@ int		lst_check_sort(t_node **stack);
 void	lst_swap(t_node *head);
 void	lst_rotate(t_node **stack);
 void	lst_rev_rotate(t_node **stack);
-
-void	lst_print(t_node *head);
-void	arr_print(int *arr, int n);
-int		stepcounter(void);
 
 #endif
