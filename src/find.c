@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:08:46 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 16:10:21 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	find_median(t_node **stack)
 	{
 		n++;
 		current = current->next;
+		if (current->next != NULL && current->next->split == 1)
+			n++;
 	}
 	v = lst_to_arr(stack, n);
 	ps_sortarr(v, n);

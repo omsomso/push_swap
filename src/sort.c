@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:18:14 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 17:08:19 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	sort_med(t_node **a, t_node **b, int n)
 	int	i;
 
 	i = 1;
-	med = find_median(a) / 4;
+	med = find_median(a) / 2;
 	if (n < 50)
 	{
 		i = 50;
@@ -79,7 +79,9 @@ void	sort_med(t_node **a, t_node **b, int n)
 		push_smaller(a, b, med);
 		i++;
 		if (i < 5)
-		med = find_median(a) - find_median(a) / i;
+			med = find_median(a) - (find_median(a) / (i * (i + 2)));
+			//med = find_median(a) - (find_median(a) / (i)); //- (i / 2) + 1));
+
 		else
 			med = find_median(a);
 	}

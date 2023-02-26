@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:31:59 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 15:20:46 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:33:46 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct node {
 
 int		input_read(t_node **a, char **argv, int argc, char ***s);
 int		input_read_add(t_node **a, int n, int *val);
-void	free_ptrptr(char ***s);
+void	free_everything(char ***s, t_node **a, t_node **b);
 int		push_swap(int argc, char **argv);
 
 void	sort(t_node **a, t_node **b);
@@ -55,6 +55,7 @@ int		input_str_check(char **s, int n);
 void	input_to_lst(t_node **stack, int *values, int n);
 int		input_int_check(int *val, int n);
 long	ps_atoi(const char *s);
+char	**dup_ptr_arr(char **s);
 
 void	ps_sortarr(int *v, int n);
 int		arr_check_sort(int *val, int n);
@@ -71,5 +72,9 @@ int		lst_check_sort(t_node **stack);
 void	lst_swap(t_node *head);
 void	lst_rotate(t_node **stack);
 void	lst_rev_rotate(t_node **stack);
+
+void	lst_print(t_node *head);
+void	arr_print(int *arr, int n);
+int		stepcounter(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:19:05 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:32:19 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,25 @@ int	*lst_to_arr(t_node **stack, int n)
 		current = current->next;
 	}
 	return (ret);
+}
+
+char	**dup_ptr_arr(char **s)
+{
+	int		i;
+	int		n;
+	char	**dup;
+
+	i = -1;
+	n = 0;
+	if (s == NULL)
+		return (NULL);
+	while (s[n] != NULL)
+		n++;
+	dup = malloc(sizeof(char **) * n + sizeof(char **));
+	if (dup == NULL)
+		return (NULL);
+	while (i++ < n - 1)
+		dup[i] = ft_strdup(s[i]);
+	dup[i] = NULL;
+	return (dup);
 }

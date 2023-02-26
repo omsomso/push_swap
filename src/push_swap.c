@@ -6,23 +6,26 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:42:26 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 15:22:01 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:32:26 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_ptrptr(char ***s)
+void	free_everything(char ***s, t_node **a, t_node **b)
 {
 	int	i;
+	int	n;
 
 	i = -1;
+	n = lst_count_el(a);
 	while (s[0][++i] != NULL)
 		free(s[0][i]);
-	if (s[0] != NULL)
-		free(s[0]);
-	if (s != NULL)
-		free(s);
+	free(*s);
+	if (*a != NULL)
+		lst_free(a);
+	if (*b != NULL)
+		lst_free(b);
 }
 
 int	input_read(t_node **a, char **argv, int argc, char ***s)
@@ -36,7 +39,7 @@ int	input_read(t_node **a, char **argv, int argc, char ***s)
 	if (argc == 1)
 		s[0] = ft_split(argv[0], ' ');
 	else
-		s[0] = argv;
+		s[0] = dup_ptr_arr(argv);
 	while (s[0][n] != NULL)
 		n++;
 	if (input_str_check(s[0], n) == 0)
@@ -85,31 +88,20 @@ int	push_swap(int argc, char **argv)
 	t_node	*a;
 	t_node	*b;
 	int		valid_input;
-	char	***s;
+	char	**s;
 
 	a = NULL;
 	b = NULL;
-	s = malloc(sizeof(char **));
-	valid_input = input_read(&a, ++argv, argc - 1, s);
+	s = NULL;
+	valid_input = input_read(&a, ++argv, argc - 1, &s);
 	if (valid_input != 1)
 	{
 		if (valid_input == 0)
 			ft_putstr_fd("Error\n", 2);
-		if (argc == 2)
-			free_ptrptr(s);
+		free_everything(&s, &a, &b);
 		return (1);
 	}
 	sort(&a, &b);
-	/*n = lst_count_el(&a);
-	if (n <= 6)
-		sort_small(&a, &b, n);
-	if (n > 6 && n <= 120)
-		sort_med(&a, &b, n);
-	if (n > 120)
-		sort_big(&a, &b);*/
-	lst_free(&a);
-	lst_free(&b);
-	if (argc == 2)
-		free_ptrptr(s);
+	free_everything(&s, &a, &b);
 	return (0);
 }
