@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:42:26 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/26 18:32:26 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/26 18:51:31 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	free_everything(char ***s, t_node **a, t_node **b)
 {
 	int	i;
-	int	n;
 
 	i = -1;
-	n = lst_count_el(a);
 	while (s[0][++i] != NULL)
 		free(s[0][i]);
 	free(*s);
