@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:18:14 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/26 18:42:01 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/27 02:24:41 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,32 +62,60 @@ void	sort_small(t_node **a, t_node **b, int n)
 		do_things(a, b, "pa");
 }
 
+int	numerology(t_node **a, t_node **b, int iter, int n2)
+{
+	int		val;
+	int		*v;
+	int		n;
+	int		nice;
+
+	n = lst_count_el(a);
+	if (n != 0)
+	{
+		v = lst_to_arr(a, n);
+		ps_sortarr(v, n);
+	}
+	nice = 18 - (iter * 2);
+	if (iter == 1)
+		nice = n / 3;
+	if (iter == 2)
+		nice = n / 4;
+	if (nice >= n || nice > 0)
+		val = find_median(a) / iter + 1;
+	if (n > 0 && nice > 0 && nice < n)
+		val = v[nice];
+	if (nice < 0)
+		val = v[n / 2];
+	free(v);
+	return (val);
+}
+
 void	sort_med(t_node **a, t_node **b, int n)
 {
-	int	med;
+	int	split;
 	int	i;
 
 	i = 1;
-	med = find_median(a) / 2;
-	if (n < 50)
+	while (lst_count_el(a) > n / 6)
 	{
-		i = 50;
-		med = find_median(a);
-	}
-	while (lst_check_sort(a) == 0)
-	{
-		push_smaller(a, b, med);
+		push_smaller(a, b, numerology(a, b, i, n));
+		//add_op(a, b);
 		i++;
-		if (i < 5)
-			med = find_median(a) - (find_median(a) / (i * (i + 2)));
-		else
-			med = find_median(a);
 	}
-	while (lst_count_el(b) > 0)
+	while (lst_count_el(a) > 3)
+	{
+		rot_to_idx(a, "a", find_smallest_idx(a));
+		do_things(a, b, "pb");
+	}
+	sort_three(a, 3);
+	while (lst_count_el(b) > 3)
 	{
 		rot_to_idx(b, "b", find_largest_idx(b));
 		do_things(a, b, "pa");
 	}
+	sort_rev_three(b, 3);
+	while (lst_count_el(b) > 0)
+		do_things(a, b, "pa");
 }
 
 void	sort_big(t_node **a, t_node **b)

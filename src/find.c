@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:08:46 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/26 16:10:21 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/27 02:20:27 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,32 @@ int	find_largest_idx(t_node **a)
 		if (current->val > max)
 		{
 			max = current->val;
+			idx = i;
+		}
+		i++;
+		current = current->next;
+	}
+	return (idx);
+}
+
+int	find_smallest_idx(t_node **a)
+{
+	int		i;
+	int		idx;
+	int		min;
+	t_node	*current;
+
+	if (*a == NULL)
+		return (-1);
+	i = 0;
+	idx = 0;
+	current = *a;
+	min = current->val;
+	while (current != NULL)
+	{
+		if (current->val < min)
+		{
+			min = current->val;
 			idx = i;
 		}
 		i++;

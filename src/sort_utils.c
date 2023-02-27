@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:29:54 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/27 01:32:24 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,31 @@ void	push_larger(t_node **a, t_node **b, int min)
 	(*a)->split = 1;
 }
 
+void	add_op(t_node **a, t_node **b)
+{
+	if((*a) != NULL && b != NULL)
+	{
+		if ((*a)->next != NULL && (*a)->val > (*a)->next->val)
+			do_things(a, b, "sa");
+		if ((*b)->next != NULL && (*b)->val < (*b)->next->val)
+			do_things(a, b, "sb");
+		/*if (((*a)->next != NULL && (*a)->val > (*a)->next->val) && ((*b)->next != NULL && (*b)->val < (*b)->next->val))
+			do_things(a, b, "ss");*/
+		/*t_node	*last_a;
+		last_a = *a;
+		while (last_a->next != NULL)
+			last_a = last_a->next;
+		if ((*a)->val > last_a->val)
+			do_things(a, b, "ra");*/
+	}
+
+		//int	n = lst_count_el(a);
+		/*if ((*a)->next != NULL && (*a)->val > (*a)->next->val)
+			do_things(a, b, "sa");*/
+		/*if (((*a)->next != NULL && (*b)->next != NULL) && ((*b)->val < (*b)->next->val) && )
+			do_things(a, b, "sb");*/
+}
+
 void	push_smaller(t_node **a, t_node **b, int max)
 {
 	int		i;
@@ -99,6 +124,7 @@ void	push_smaller(t_node **a, t_node **b, int max)
 		smalleridx = find_smaller_idx(a, max);
 		rot_to_idx(a, "a", smalleridx);
 		do_things(a, b, "pb");
+		//add_op(a, b);
 		i++;
 	}
 	(*b)->split = 1;

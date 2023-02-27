@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:31:59 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/26 18:55:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/02/27 02:25:24 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ int		rot_to_idx(t_node **stack, char *which, int idx);
 int		rot_to_idx_larger(t_node **stack, char *which, int idx);
 void	push_larger(t_node **a, t_node **b, int min);
 void	push_smaller(t_node **a, t_node **b, int max);
+void	add_op(t_node **a, t_node **b);
 
 int		find_median(t_node **stack);
 int		find_larger_idx(t_node **stack, int min);
 int		find_smaller_idx(t_node **stack, int max);
 int		find_largest_idx(t_node **a);
+int		numerology(t_node **a, t_node **b, int iter, int n2);
 
 void	do_things(t_node **a, t_node **b, char *inst);
 void	do_swap(t_node *a, t_node *b, char *inst);
@@ -72,5 +74,7 @@ int		lst_check_sort(t_node **stack);
 void	lst_swap(t_node *head);
 void	lst_rotate(t_node **stack);
 void	lst_rev_rotate(t_node **stack);
+int		find_smallest_idx(t_node **a);
+
 
 #endif

@@ -6,7 +6,7 @@
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 05:15:37 by kpawlows          #+#    #+#              #
-#    Updated: 2023/02/26 18:51:26 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/02/26 19:50:16 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	=	push_swap
 SRC_DIR	=	src/
 OBJ_DIR	=	obj/
 CC 		=	gcc
-FLAGS	=	-Wall -Werror -Wextra
+FLAGS	=	#-Wall -Werror -Wextra
 AR 		=	ar -rcs
 LINK 	=	$(CC) $(FLAGS)
 RM		=	rm -f
