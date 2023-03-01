@@ -6,49 +6,56 @@
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 06:13:39 by kpawlows          #+#    #+#              #
-#    Updated: 2023/01/25 17:02:01 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/03/02 00:21:06 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libft.a
+SRC_DIR	=	src/
 CC 		=	gcc
-FLAGS	=	-Wall -Werror -Wextra -c
+CFLAGS	=	-Wall -Werror -Wextra
 AR 		=	ar -rcs
 RM		=	rm -rf
-SRC 	= 	ft_atoi.c \
-			ft_bzero.c \
-			ft_calloc.c \
-			ft_isalnum.c \
-			ft_isalpha.c \
-			ft_isascii.c \
-			ft_isdigit.c \
-			ft_isprint.c \
-			ft_itoa.c \
-			ft_memchr.c \
-			ft_memcmp.c \
-			ft_memcpy.c \
-			ft_memmove.c \
-			ft_memset.c \
-			ft_putchar_fd.c \
-			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
-			ft_putstr_fd.c \
-			ft_split.c \
-			ft_strchr.c \
-			ft_strrchr.c \
-			ft_strdup.c \
-			ft_striteri.c \
-			ft_strjoin.c \
-			ft_strlcat.c \
-			ft_strlcpy.c \
-			ft_strlen.c \
-			ft_strmapi.c \
-			ft_strncmp.c \
-			ft_strnstr.c \
-			ft_strtrim.c \
-			ft_substr.c \
-			ft_tolower.c \
-			ft_toupper.c
+SRC 	= 	$(SRC_DIR)ft_atoi.c \
+			$(SRC_DIR)ft_bzero.c \
+			$(SRC_DIR)ft_calloc.c \
+			$(SRC_DIR)ft_isalnum.c \
+			$(SRC_DIR)ft_isalpha.c \
+			$(SRC_DIR)ft_isascii.c \
+			$(SRC_DIR)ft_isdigit.c \
+			$(SRC_DIR)ft_isprint.c \
+			$(SRC_DIR)ft_itoa.c \
+			$(SRC_DIR)ft_memchr.c \
+			$(SRC_DIR)ft_memcmp.c \
+			$(SRC_DIR)ft_memcpy.c \
+			$(SRC_DIR)ft_memmove.c \
+			$(SRC_DIR)ft_memset.c \
+			$(SRC_DIR)ft_putchar_fd.c \
+			$(SRC_DIR)ft_putendl_fd.c \
+			$(SRC_DIR)ft_putnbr_fd.c \
+			$(SRC_DIR)ft_putstr_fd.c \
+			$(SRC_DIR)ft_split.c \
+			$(SRC_DIR)ft_strchr.c \
+			$(SRC_DIR)ft_strrchr.c \
+			$(SRC_DIR)ft_strdup.c \
+			$(SRC_DIR)ft_striteri.c \
+			$(SRC_DIR)ft_strjoin.c \
+			$(SRC_DIR)ft_strjoin_free.c \
+			$(SRC_DIR)ft_strlcat.c \
+			$(SRC_DIR)ft_strlcpy.c \
+			$(SRC_DIR)ft_strlen.c \
+			$(SRC_DIR)ft_strmapi.c \
+			$(SRC_DIR)ft_strncmp.c \
+			$(SRC_DIR)ft_strnstr.c \
+			$(SRC_DIR)ft_strtrim.c \
+			$(SRC_DIR)ft_substr.c \
+			$(SRC_DIR)ft_tolower.c \
+			$(SRC_DIR)ft_toupper.c \
+			$(SRC_DIR)get_next_line.c \
+			$(SRC_DIR)get_next_line_utils.c \
+			$(SRC_DIR)ft_printf.c \
+			$(SRC_DIR)ft_printf_utils.c
+
 OBJ		=	$(SRC:.c=.o)
 
 GREEN=\033[0;32m
@@ -58,8 +65,9 @@ END=\033[0m
 
 all: $(NAME)
 
-$(NAME):
-	@$(CC) $(FLAGS) $(SRC)
+$(NAME): $(SRC)
+	@$(CC) $(CFLAGS) -c $(SRC)
+	@mv *.o $(SRC_DIR)
 	@$(AR) $(NAME) $(OBJ)
 	@printf "[libft]$(GREEN) \t $(NAME) created $(END)\n"
 
