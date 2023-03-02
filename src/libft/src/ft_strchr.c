@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:24:14 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:38 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:41:04 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	char	str1[] = "tst1e";
-	int		c = 1024;
-	int		d = 357; //somethign with char limits
-	
-	printf("%s\n%s\n", ft_strchr(str1, c), strchr(str1, c));
-	printf("%s\n%s\n", ft_strchr(str1, d), strchr(str1, d));
-	c = '\0';
-	printf("%s\n%s\n", ft_strchr(str1, c), strchr(str1, c));
-	return (0);
-}*/

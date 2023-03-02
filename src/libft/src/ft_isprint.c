@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:45:05 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:59 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:39:39 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-
-/*int	main(void)
-{
-	printf("%d\n", ft_isprint(44));
-	printf("%d\n", isprint(44));
-}*/

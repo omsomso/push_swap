@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:37:10 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:55 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:39:51 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-
-/*int	main(void)
-{
-	printf("%d\n", ft_isalnum(2));
-	printf("%d\n", isalnum(2));
-}*/

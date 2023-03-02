@@ -6,19 +6,11 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 00:09:50 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:38 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:41:31 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-
-/*char f(unsigned int n, char c)
-{
-	(void) n;
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
-}*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -39,11 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	s2[i] = '\0';
 	return (s2);
 }
-
-/*int	main(void)
-{
-	char	*s = "yOlooOo";
-
-	printf("%s\n", ft_strmapi(s, f));
-	return (0);
-}*/

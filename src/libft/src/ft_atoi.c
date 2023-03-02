@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 05:18:18 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:52 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:39:58 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,3 @@ int	ft_atoi(const char *s)
 	}
 	return (res * sign);
 }
-
-/*int	main(void)
-{
-	char str1[] = "43248";
-
-	printf("%d\n", ft_atoi(str1));
-	printf("%d\n", atoi(str1));
-	return (0);
-}*/

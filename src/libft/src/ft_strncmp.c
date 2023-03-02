@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/03 17:44:23 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:38 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:41:36 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 	return (0);
 }
-
-/*int main(void)
-{
-	size_t	n;
-
-	char *tab1 = "";
-	char *tab2 = "AAAAAA";
-	//n = strlen("the cake is a lie !\0I'm hidden lol\r\n");
-	n = 6;
-	printf("%d \n", ft_strncmp(tab1, tab2, n));
-	printf("%d \n", strncmp(tab1, tab2, n));
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 07:14:21 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:38 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:40:48 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
-
-/*int	main(void)
-{
-	ft_putnbr_fd(4500, 1);
-	write(1, "\n", 1);
-	return (0);
-}*/

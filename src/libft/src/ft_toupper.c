@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:48:14 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:38 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:41:56 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-
-/*int	main(void)
-{
-	char	c = 'b';
-
-	printf("%c\n", ft_toupper(c));
-	printf("%c\n", toupper(c));
-}*/

@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 15:29:19 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:52:41 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:41:07 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,3 @@ char	*ft_strdup(const char *s)
 	ft_strlcpy(dup, s, slen + 1);
 	return (dup);
 }
-
-/*int	main(void)
-{
-	char	str1[] = "12345";
-
-	printf("%s\n", ft_strdup(str1));
-	printf("%s\n", strdup(str1));
-	return (0);
-}*/

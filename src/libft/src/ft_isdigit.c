@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 11:32:11 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:59 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:39:42 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,3 @@ int	ft_isdigit(int c)
 		return (1);
 	return (0);
 }
-
-/*int	main(void)
-{
-	printf("%d\n", ft_isdigit('4'));
-	printf("%d\n", isdigit('4'));
-}*/

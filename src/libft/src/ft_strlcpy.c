@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 03:08:06 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:38 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:39:19 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	dst[i] = '\0';
 	return (src_len);
 }
-
-/*int main(void)
-{
-	printf("\n");
-	char dest[100] = "aaa";
-	char src[100] = "1234";
-	printf("%d \n", ft_strlcpy(dest, src, 3));
-	printf("%s\n", dest);
-
-	printf("----------\n");
-
-	char dest2[100] = "aaa";
-	char src2[100] = "1234";
-	printf("%lu \n", strlcpy(dest2, src2, 3));
-	printf("%s\n", dest2);
-	printf("\n");
-	return (0);
-}*/

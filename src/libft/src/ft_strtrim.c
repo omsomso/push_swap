@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 16:25:49 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:38 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:41:46 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		s1len--;
 	return (ft_substr(s1, i, s1len - i));
 }
-
-/*int main(void)
-{
-	char	str1[] = "  \t \t \n   \n\n\n\t";
-	char	str2[] = " \n\t";
-	
-	printf("%s\n", ft_strtrim(str1, str2));
-//	printf("%s\n", ft_strtrim(str1, 3, 7));
-//	printf("%s\n", strtrim(str1, 2, 2));
-	return (0);
-}*/

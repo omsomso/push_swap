@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 07:23:27 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/01/25 18:50:58 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 02:39:33 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,3 @@ char	*ft_itoa(int n)
 	s[size + 1] = '\0';
 	return (s);
 }
-
-/*int	main(void)
-{
-	printf("%s\n", ft_itoa(14248));
-	//printf("%s\n", itoa(-321));
-	return (0);
-}*/
