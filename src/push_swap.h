@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:31:59 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/27 20:37:19 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:23:16 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 typedef struct node {
 	int			val;
-	int			split;
 	struct node	*next;
 }	t_node;
 
@@ -45,6 +44,7 @@ int		find_median(t_node **stack);
 int		find_larger_idx(t_node **stack, int min);
 int		find_smaller_idx(t_node **stack, int max);
 int		find_largest_idx(t_node **a);
+int		find_split(t_node **stack, int nice);
 int		numerology(t_node **a, t_node **b, int iter, int n2);
 
 void	do_things(t_node **a, t_node **b, char *inst);
@@ -63,8 +63,8 @@ void	ps_sortarr(int *v, int n);
 int		arr_check_sort(int *val, int n);
 int		*lst_to_arr(t_node **stack, int n);
 
-void	lst_add_top(t_node **head, int val, int split);
-void	lst_add_bottom(t_node *head, int val, int split);
+void	lst_add_top(t_node **head, int val);
+void	lst_add_bottom(t_node *head, int val);
 int		lst_del_first(t_node **head);
 int		lst_del_last(t_node *head);
 void	lst_free(t_node **lst);
@@ -75,6 +75,5 @@ void	lst_swap(t_node *head);
 void	lst_rotate(t_node **stack);
 void	lst_rev_rotate(t_node **stack);
 int		find_smallest_idx(t_node **a);
-
 
 #endif

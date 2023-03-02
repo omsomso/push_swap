@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find.c                                             :+:      :+:    :+:   */
+/*   find_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:08:46 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/03/01 12:39:47 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:21:01 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@ int	find_median(t_node **stack)
 	n = 1;
 	val = 0;
 	current = (*stack);
-	while (current->next != NULL && current->next->split == 0)
+	while (current->next != NULL)
 	{
 		n++;
 		current = current->next;
-		if (current->next != NULL && current->next->split == 1)
-			n++;
 	}
 	v = lst_to_arr(stack, n);
 	ps_sortarr(v, n);

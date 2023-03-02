@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:00:58 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 15:10:58 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:20:36 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ void	input_to_lst(t_node **stack, int *values, int n)
 		if (new_node == NULL)
 			return ;
 		new_node->val = values[i];
-		new_node->split = 0;
 		new_node->next = *stack;
 		*stack = new_node;
 		i--;

@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:03:45 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:10:38 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,35 +49,28 @@ int	lst_check_sort(t_node **stack)
 void	lst_swap(t_node *head)
 {
 	int	tmp_val;
-	int	tmp_split;
 
 	if (head == NULL || head->next == NULL)
 		return ;
 	tmp_val = head->val;
-	tmp_split = head->split;
 	head->val = head->next->val;
-	head->split = head->next->split;
 	head->next->val = tmp_val;
-	head->next->split = tmp_split;
 }
 
 void	lst_rotate(t_node **stack)
 {
 	int	tmp_val;
-	int	tmp_split;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 	tmp_val = (*stack)->val;
-	tmp_split = (*stack)->split;
 	lst_del_first(stack);
-	lst_add_bottom(*stack, tmp_val, tmp_split);
+	lst_add_bottom(*stack, tmp_val);
 }
 
 void	lst_rev_rotate(t_node **stack)
 {
 	int		tmp_val;
-	int		tmp_split;
 	t_node	*tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
@@ -86,7 +79,6 @@ void	lst_rev_rotate(t_node **stack)
 	while (tmp->next != NULL)
 		tmp = tmp->next;
 	tmp_val = tmp->val;
-	tmp_split = tmp->split;
 	lst_del_last(*stack);
-	lst_add_top(stack, tmp_val, tmp_split);
+	lst_add_top(stack, tmp_val);
 }

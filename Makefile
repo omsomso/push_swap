@@ -6,7 +6,7 @@
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 05:15:37 by kpawlows          #+#    #+#              #
-#    Updated: 2023/02/26 19:50:16 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/03/02 01:22:53 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ LINK 	=	$(CC) $(FLAGS)
 RM		=	rm -f
 SRC 	= 	$(SRC_DIR)arr_utils.c \
 			$(SRC_DIR)do.c \
-			$(SRC_DIR)find.c \
+			$(SRC_DIR)find_1.c \
+			$(SRC_DIR)find_2.c \
 			$(SRC_DIR)input_utils.c \
 			$(SRC_DIR)lst_utils_1.c \
 			$(SRC_DIR)lst_utils_2.c \

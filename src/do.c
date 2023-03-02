@@ -6,7 +6,7 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:08:30 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/27 14:43:11 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:12:03 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void	do_push(t_node **stack1, t_node **stack2)
 	if (*stack2 == NULL)
 		return ;
 	tmp_val = (*stack2)->val;
-	tmp_split = (*stack2)->split;
 	lst_del_first(stack2);
-	lst_add_top(stack1, tmp_val, tmp_split);
+	lst_add_top(stack1, tmp_val);
 }

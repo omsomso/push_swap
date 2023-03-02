@@ -6,13 +6,13 @@
 /*   By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 21:03:45 by kpawlows          #+#    #+#             */
-/*   Updated: 2023/02/24 06:09:49 by kpawlows         ###   ########.fr       */
+/*   Updated: 2023/03/02 01:11:23 by kpawlows         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lst_add_top(t_node **head, int val, int split)
+void	lst_add_top(t_node **head, int val)
 {
 	t_node	*new;
 
@@ -20,12 +20,11 @@ void	lst_add_top(t_node **head, int val, int split)
 	if (new == NULL)
 		return ;
 	new->val = val;
-	new->split = split;
 	new->next = *head;
 	*head = new;
 }
 
-void	lst_add_bottom(t_node *head, int val, int split)
+void	lst_add_bottom(t_node *head, int val)
 {
 	t_node	*new_last;
 
@@ -35,7 +34,6 @@ void	lst_add_bottom(t_node *head, int val, int split)
 	new_last->next = malloc(sizeof(t_node));
 	new_last = new_last->next;
 	new_last->val = val;
-	new_last->split = split;
 	new_last->next = NULL;
 }
 
