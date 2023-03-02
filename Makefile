@@ -6,17 +6,14 @@
 #    By: kpawlows <kpawlows@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/20 05:15:37 by kpawlows          #+#    #+#              #
-#    Updated: 2023/03/02 01:22:53 by kpawlows         ###   ########.fr        #
+#    Updated: 2023/03/02 16:31:42 by kpawlows         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap
 SRC_DIR	=	src/
-OBJ_DIR	=	obj/
 CC 		=	gcc
-FLAGS	=	#-Wall -Werror -Wextra
-AR 		=	ar -rcs
-LINK 	=	$(CC) $(FLAGS)
+CFLAGS	=	-Wall -Werror -Wextra
 RM		=	rm -f
 SRC 	= 	$(SRC_DIR)arr_utils.c \
 			$(SRC_DIR)do.c \
@@ -36,18 +33,16 @@ RED=\033[0;31m
 BLUE=\033[0;34m
 END=\033[0m
 
-all: $(NAME) link
+all: $(NAME)
 
 $(NAME): $(SRC) 
 	@$(MAKE) -C src/libft
 	@$(CC) $(FLAGS) -c $(SRC)
 	@mv *.o $(SRC_DIR)
 	@printf "[$(NAME)]$(GREEN) \t $? updated $(END)\n"
-	
-link : $(NAME) $(OBJ)
 	@$(CC) $(OBJ) src/libft/libft.a -o $(NAME)
 	@printf "[$(NAME)]$(GREEN) \t $(NAME) created $(END)\n"
-
+	
 clean:
 	@$(RM) $(OBJ)
 	@cd src/libft && $(MAKE) clean 
